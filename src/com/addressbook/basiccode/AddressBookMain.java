@@ -1,6 +1,6 @@
 package com.addressbook.basiccode;
 
-
+import java.util.Scanner;
 
 /***
  * 
@@ -18,5 +18,32 @@ class AddressBookMain {
 		 * 
 		 */
     System.out.println("Welcome to AddressBook");
-    }
-    }
+    
+    Scanner sc = new Scanner(System.in);
+    int choice;
+    AddressBook addressbook = new AddressBook();
+   	 
+   	 do {
+   		 System.out.println("ADDRESSBOOK MANU");
+   		 System.out.println("1.ADD CONTACT \n2.SHOW CONTACT \n3.UPDATE CONTACT ");
+   		 System.out.println("Enter the choice");
+   	    
+          choice = sc.nextInt();
+   		 switch(choice) {
+   		 case 1:
+   			 addressbook.addContact();
+   			 break;
+   		 case 2:
+   			 addressbook.showContact();
+   			 break;
+   		 case 3:
+   			 addressbook.updatedata();
+   			 break;
+   		 
+   			 default:
+   				 System.out.println("Invalid Choice");
+   				 break;
+   		 }
+    }while(choice<4);
+   	}   
+    	   }
