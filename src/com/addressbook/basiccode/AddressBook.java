@@ -8,10 +8,9 @@ import java.util.Scanner;
  */
 
 public class AddressBook {
-	Contacts contacts = new Contacts();
-	  Scanner sc = new Scanner(System.in);
-	  
-	public void addContact() {
+	Contacts contacts = new  Contacts();
+	 Scanner sc = new Scanner(System.in);
+public void addContact() {
 		System.out.println("Enter the FirstName:");
 		contacts.setFirstname(sc.next());
 	    System.out.println("Enter the LastName:");		
@@ -27,13 +26,17 @@ public class AddressBook {
        System.out.println("Enter the Phonenumber:");
 		contacts.setPhonenumber(sc.next());
        System.out.println("Enter the Email:");		
-		contacts.setEmail(sc.next());}
+		contacts.setEmail(sc.next());
+		
+		}
+	
 public void showContact()
 {
 	if(contacts == null) {
 		System.out.println("Contacts Object is not available");
 	}
-	else {
+	else
+	{
       System.out.println("First Name:"+contacts.getFirstname());
       System.out.println("Last Name:"+contacts.getLastname());
 	  System.out.println("Address:"+contacts.getAddress());
@@ -41,13 +44,15 @@ public void showContact()
 	  System.out.println("City:"+contacts.getCity());
 	  System.out.println("Zip:"+contacts.getZip());
 	  System.out.println("Phonenumber:"+contacts.getPhonenumber());
-	  System.out.println("Email:"+contacts.getEmail());}
+	  System.out.println("Email:"+contacts.getEmail());
+	  }
 }
 
- public void updatedata() {
+ public void updateContact() {
 	 System.out.println("Enter the First Name Update Contact:");
 	 String fname = sc.next();
-	 if(fname.equals(contacts.getFirstname())) {
+	  {
+		  if(fname.equals(contacts.getFirstname())) {
 	 System.out.println("Contact is available");
 	 System.out.println("Enter the Last Name:");		
 	    contacts.setLastname(sc.next());
@@ -68,10 +73,27 @@ public void showContact()
          {
 	 System.out.println("Contact is not availbale");
 	 }
+	   }
  }
-	
-}
-
+ 
+ public void deleteContact() {
+	 System.out.println("Enter the First Name to Delete the Contact:");
+	 String fname = sc.next();
+	 
+	 if(fname.equals(contacts.getFirstname())) 
+		 {
+			  System.out.println("Contact is available");
+		  contacts = null;
+			System.out.println("Contact is  Deleted.");
+		 }
+		 
+	 else
+	 {
+			 System.out.println("Contact is not availbale");
+			 }
+	 }
+	 
+ }
 
 
 
